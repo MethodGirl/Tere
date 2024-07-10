@@ -14,33 +14,164 @@
   <body>
     <header class="page-header">
       <div class="container">
-        <div class="page-header__top">
-          <a href="" class="page-header__logo">
+        <div class="page-header-top">
+          <a href="" class="page-header-logo">
             <img src="./img/header-logo-img.png" alt="logo Tere"">
           </a>
           <nav class="main-menu">
-            <ul class="main-menu__list">
-              <li class="main-menu__item">
-                <a href="" class="main-menu__link">Home</a>
+            <ul class="main-menu-list">
+              <li class="main-menu-item">
+                <a href="" class="main-menu-link">Home</a>
               </li>
-              <li class="main-menu__item">
-                <a href="" class="main-menu__link">How tere works</a>
+              <li class="main-menu-item">
+                <a href="" class="main-menu-link">How tere works</a>
               </li>
-              <li class="main-menu__item">
-                <a href="" class="main-menu__link">Tere benefits</a>
+              <li class="main-menu-item">
+                <a href="" class="main-menu-link">Tere benefits</a>
               </li>
             </ul>
           </nav>
-          <button type="button" class="page-header__button">Help Center</button>
-          <button type="button" class="page-header__burger-button">
-              <span class="burger-button-line first-line"></span>
-              <span class="burger-button-line second-line"></span>
-              <span class="burger-button-line third-line"></span>
+          <button type="button" class="page-header-button">Help Center</button>
+          <button type="button" class="page-header-burger-button">
+            <span class="burger-button-line first-line"></span>
+            <span class="burger-button-line second-line"></span>
+            <span class="burger-button-line third-line"></span>
           </button>
         </div>
       </div>
     </header>
-    <main class="main"></main>
+    <main class="main">
+      <h1 class="visually-hidden">download tere app</h1>
+      <section class="banner">
+        <div class="container">
+          <div class="banner-body">
+            <h1 class="banner-title">
+              download app, <br />
+              save money,make <br />
+              friends!
+            </h1>
+            <p class="banner-subtitle">
+              Its simple and its free. Play your part in reducing Carbon
+              Footprint and help Mother Nature to sustain its beauty. So what
+              are you waiting for ? Lets ride together
+            </p>
+            <div class="banner-downoload-button">
+              <button class="downoload-button-android" type="button">
+                downoload
+              </button>
+              <button class="downoload-button-ios" type="button">
+                downoload
+              </button>
+            </div>
+          </div>
+          <div class="banner-img">
+            <img src="./img/banner__img.png" alt="trip image" />
+          </div>
+        </div>
+      </section>
+      <section class="form-inner">
+        <form action="html/sendform" method="post" class="form">
+          <label class="form-label" for="phone"
+            >Let’s go. Get a link <br />
+            to download the app.</label
+          >
+          <div class="form-group">
+            <input
+              class="form-field-text"
+              type="tel"
+              name="phone"
+              id="phone"
+              required=""
+              placeholder="Enter mobile phone number"
+              pattern="\+?[\(\)\d\s\-]{7,}"
+            />
+            <button class="form-button" type="submit">apply to drive</button>
+          </div>
+        </form>
+      </section>
+      <section class="functionality">
+        <div class="container">
+          <div class="functionality-description">
+            <h2 class="visually-hidden">
+              description of the application functionality
+            </h2>
+            <h2 class="functionality-description-title">
+              how <span>tere</span> works
+            </h2>
+            <p class="functionality-description-subtitle">
+              Download and install the tere app. Enter your phone number and
+              make your user account. When approved you may start driving.
+            </p>
+          </div>
+          <div class="functionality-inner">
+            <div class="facilities-first-block">
+              <div class="facilities facilities-first">
+                <h3 class="facilities-title">request a ride</h3>
+                <p class="fasilities-subtitle">
+                  Have to reach office or going for shopping ? Just put your
+                  current location and destination and search a ride that suits
+                  you
+                </p>
+              </div>
+              <div class="facilities facilities-third">
+                <h3 class="facilities-title">instant notfications</h3>
+                <p class="fasilities-subtitle">
+                  Get instant notifications for your rides and be in contact
+                  with fellow riders all the time
+                </p>
+              </div>
+            </div>
+            <div class="facilities-app-vision ">
+              <img src="./img/facilities-img.png" alt="app vision" />
+            </div>
+            <div class="facilities-second-block">
+              <div class="facilities facilities-second">
+                <h3 class="facilities-title">post a ride</h3>
+                <p class="fasilities-subtitle">
+                  Going somewhere but hate to travel alone - just post your ride
+                  details and publish it
+                </p>
+              </div>
+              <div class="facilities facilities-fourth">
+                <h3 class="facilities-title">cashless payment</h3>
+                <p class="fasilities-subtitle">
+                  Payment made easy by using your own Wallet - no more cash to
+                  carry
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="facilities-pagination">
+            <ul class="facilities-pagination-list">
+              <li class="facilities-pagination-item">
+                <button
+                  class="facilities-pagination-button is-current"
+                  type="button"
+                ></button>
+              </li>
+              <li class="facilities-pagination-item">
+                <button
+                  class="facilities-pagination-button"
+                  type="button"
+                ></button>
+              </li>
+              <li class="facilities-pagination-item">
+                <button
+                  class="facilities-pagination-button"
+                  type="button"
+                ></button>
+              </li>
+              <li class="facilities-pagination-item">
+                <button
+                  class="facilities-pagination-button"
+                  type="button"
+                ></button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
     <footer class="footer"></footer>
   </body>
 </html>
