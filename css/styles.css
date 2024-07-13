@@ -431,6 +431,8 @@ h1 {
   min-width: 165px;
 }
 
+/* FUNCTIONALITY */
+
 .functionality-description {
   margin-top: 128px;
 }
@@ -458,12 +460,18 @@ h2 span {
 }
 
 .functionality-inner {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-areas:
+      "facilities-first facilities-app-vision facilities-second"
+      "facilities-third facilities-app-vision facilities-fourth";
+  grid-auto-flow: column;
+  grid-template-columns: minmax(270px, 290px) 1fr minmax(270px, 290px);
+  margin-bottom: 88px;
 }
 
 .facilities-first {
   position: relative;
+  grid-area: facilities-first;
 }
 
 .facilities-first .facilities-title::before {
@@ -481,14 +489,15 @@ h2 span {
   background-image: url(../img/facilities-first-number.png);
   height: 38px;
   top: 65px;
-    right: 25px;
-    position: absolute;
-    background-repeat: no-repeat;
-    width: 14px;
+  right: 25px;
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 14px;
 }
 
 .facilities-second {
   position: relative;
+  grid-area: facilities-second;
 }
 
 .facilities-second .facilities-title::before {
@@ -505,15 +514,16 @@ h2 span {
   content: "";
   background-image: url(../img/facilities-second-number.png);
   height: 25px;
-    top: 63px;
-    left: 22px;
-    position: absolute;
-    background-repeat: no-repeat;
-    width: 20px;
+  top: 63px;
+  left: 22px;
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 20px;
 }
 
 .facilities-third {
   position: relative;
+  grid-area: facilities-third;
 }
 
 .facilities-third .facilities-title::before {
@@ -531,14 +541,15 @@ h2 span {
   background-image: url(../img/facilities-third-number.png);
   height: 38px;
   top: 65px;
-    right: 23px;
-    position: absolute;
-    background-repeat: no-repeat;
-    width: 18px;
+  right: 23px;
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 18px;
 }
 
 .facilities-fourth {
   position: relative;
+  grid-area: facilities-fourth;
 }
 
 .facilities-fourth .facilities-title::before {
@@ -546,7 +557,7 @@ h2 span {
   background-image: url(../img/facilities-before-img.png);
   width: 63px;
   height: 63px;
-  top: 97px;
+  top: 45px;
   left: 0;
   position: absolute;
 }
@@ -555,30 +566,14 @@ h2 span {
   content: "";
   background-image: url(../img/facilities-fourth-number.png);
   height: 25px;
-    top: 115px;
-    left: 21px;
-    position: absolute;
-    background-repeat: no-repeat;
-    width: 20px;
+  top: 63px;
+  left: 22px;
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 20px;
 }
 
-.facilities-first-block,
-.facilities-second-block {
-  max-width: 290px;
-  z-index: 1;
-}
-
-.facilities-first-block {
-  margin-right: 100px;
-  max-width: 290px;
-}
-
-.facilities-second-block {
-  margin-left: 100px;
-  max-width: 290px;
-}
-
-.facilities-first-block h3 {
+.facilities-first h3, .facilities-third h3 {
   padding-top: 115px;
   font-size: 22px;
   text-transform: uppercase;
@@ -587,14 +582,14 @@ h2 span {
   font-weight: 800;
 }
 
-.facilities-first-block p {
+.facilities-first p, .facilities-third p {
   font-size: 20px;
   line-height: 1.3;
   color: var(--color-grey);
   text-align: end;
 }
 
-.facilities-second-block h3 {
+.facilities-second h3, .facilities-fourth h3 {
   padding-top: 115px;
   font-size: 22px;
   text-transform: uppercase;
@@ -603,39 +598,41 @@ h2 span {
   font-weight: 800;
 }
 
-.facilities-second-block p {
+.facilities-second p, .facilities-fourth p {
   font-size: 20px;
   line-height: 1.3;
   color: var(--color-grey);
   text-align: start;
-}
-
-.facilities-fourth {
-  padding-top: 52px;
 }
 
 .facilities-app-vision{
   position: relative;
   z-index: 1;
+  grid-area: facilities-app-vision;
+  margin-inline: auto;
 }
 
 .facilities-app-vision::before {
   content: "";
-    position: absolute;
-    width: 400px;
-    z-index: -1;
-    transform: translateX(-50%);
-    left: 50%;
-    top: 12%;
-    height: 400px;
-    background-color: var(--color-green);
-    border-radius: 50%;
+  position: absolute;
+  max-width: 400px;
+  min-width: 279px;
+  width: 33vw;
+  z-index: -1;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 12%;
+  max-height: 400px;
+  min-height: 279px;
+  height: 33vw;
+  background-color: var(--color-green);
+  border-radius: 50%;
 }
 
 .facilities-pagination-list {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  margin-top: 2vw;
 }
 
 .facilities-pagination-list li {
@@ -644,16 +641,88 @@ h2 span {
 
 .facilities-pagination-button {
   width: 12px;
-    height: 12px;
-    border: none;
-    background-color: var(--color-green);
-    opacity: 50%;
-    border-radius: 50%;
+  height: 12px;
+  border: none;
+  background-color: var(--color-green);
+  opacity: 50%;
+  border-radius: 50%;
 }
 
 .facilities-pagination-item .is-current {
   background-color: var(--color-green);
   opacity: 1;
+}
+
+/* BENEFITS */
+
+.block-benefits {
+  display: grid;
+  grid-template-areas: "block-benefits-text . image"
+                        "benefits-description . image";
+  background: var(--color-white);
+  justify-content: space-between;
+  grid-template-columns: minmax(200px, 440px) 1fr 2fr;
+  grid-template-rows: repeat(2, 155px);
+  margin-bottom: 55px;
+  max-width: 1060px;
+}
+
+.block-benefits-text {
+  grid-area: block-benefits-text;
+}
+
+.benefits-description {
+  grid-area: benefits-description;
+}
+
+.block-benefits img {
+  grid-area: image;
+}
+
+.benefits-description {
+  font-size: 22px;
+    max-width: 455px;
+    margin-left: 45px;
+    color: var(--color-grey);
+}
+
+.block-benefits img {
+  margin: 25px 0;
+}
+
+.block-benefits-text {
+  grid-area: block-benefits-text;
+  display: flex;
+    align-items: center;
+    margin-left: 45px;
+    align-self: end;
+}
+
+.block-benefits-text .benefits-number {
+  font-size: 88px;
+    margin-right: 40px;
+    color: var(--color-green);
+}
+
+.block-benefits-text h2 {
+  font-size: 34px;
+}
+
+.block-benefits img{
+  grid-area: image;
+}
+
+.second-block-benefits {
+  margin-inline: auto 4vw;
+}
+
+.first-block-benefits, .third-block-benefits {
+  margin-left: 4vw;
+}
+
+
+.benefits-description {
+  grid-area: benefits-description;
 }
 
 @media (max-width: 1024px) {
@@ -725,6 +794,39 @@ h2 span {
     margin-left: 0.8vw;
     font-size: 15px;
     min-width: 130px;
+  }
+
+  /* FUNCTIONALITY */
+
+  .functionality-inner {
+    grid-template-areas:
+    "facilities-app-vision facilities-app-vision"
+    "facilities-first facilities-second"
+    "facilities-third facilities-fourth";
+    column-gap: 15vw;
+    grid-template-columns:none;
+    justify-content: center;
+  }
+
+  .facilities {
+    max-width: 290px;
+    min-width: 188px;
+  }
+  .facilities h3 {
+    line-height: 1.5;
+    font-size: 18px;
+  }
+
+  .facilities p {
+    font-size: 16px;
+  }
+
+  .facilities-app-vision img {
+    max-height: 420px;
+  }
+
+  .block-benefits {
+    margin-inline: 0;
   }
 }
 
@@ -860,5 +962,27 @@ h2 span {
     margin: 15px auto 30px;
     min-width: 130px;
     max-width: 280px;
+  }
+
+  /* FUNCTIONALITY */
+
+  .functionality-inner {
+    grid-template-areas:
+    "facilities-app-vision"
+        "facilities-first"
+        "facilities-second"
+        "facilities-third"
+        "facilities-fourth";
+    column-gap: 0;
+  }
+
+  .facilities h3, .facilities p {
+    text-align: center;
+  }
+
+  .container .functionality-inner .facilities ::before,
+  .container .functionality-inner .facilities ::after {
+    transform: translateX(-50%);
+    left: 50%;
   }
 }
