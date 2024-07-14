@@ -201,7 +201,7 @@ svg * {
 @font-face {
   font-family: "Gilroy";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   src: url("../fonts/Gilroy-Medium.woff2") format("woff2");
   font-display: swap;
 }
@@ -462,8 +462,8 @@ h2 span {
 .functionality-inner {
   display: grid;
   grid-template-areas:
-      "facilities-first facilities-app-vision facilities-second"
-      "facilities-third facilities-app-vision facilities-fourth";
+    "facilities-first facilities-app-vision facilities-second"
+    "facilities-third facilities-app-vision facilities-fourth";
   grid-auto-flow: column;
   grid-template-columns: minmax(270px, 290px) 1fr minmax(270px, 290px);
   margin-bottom: 88px;
@@ -573,7 +573,8 @@ h2 span {
   width: 20px;
 }
 
-.facilities-first h3, .facilities-third h3 {
+.facilities-first h3,
+.facilities-third h3 {
   padding-top: 115px;
   font-size: 22px;
   text-transform: uppercase;
@@ -582,14 +583,16 @@ h2 span {
   font-weight: 800;
 }
 
-.facilities-first p, .facilities-third p {
+.facilities-first p,
+.facilities-third p {
   font-size: 20px;
   line-height: 1.3;
   color: var(--color-grey);
   text-align: end;
 }
 
-.facilities-second h3, .facilities-fourth h3 {
+.facilities-second h3,
+.facilities-fourth h3 {
   padding-top: 115px;
   font-size: 22px;
   text-transform: uppercase;
@@ -598,14 +601,15 @@ h2 span {
   font-weight: 800;
 }
 
-.facilities-second p, .facilities-fourth p {
+.facilities-second p,
+.facilities-fourth p {
   font-size: 20px;
   line-height: 1.3;
   color: var(--color-grey);
   text-align: start;
 }
 
-.facilities-app-vision{
+.facilities-app-vision {
   position: relative;
   z-index: 1;
   grid-area: facilities-app-vision;
@@ -655,10 +659,14 @@ h2 span {
 
 /* BENEFITS */
 
+.benefits .container {
+  padding-bottom: 5vw;
+}
+
 .block-benefits {
   display: grid;
   grid-template-areas: "block-benefits-text . image"
-                        "benefits-description . image";
+    "benefits-description . image";
   background: var(--color-white);
   justify-content: space-between;
   grid-template-columns: minmax(200px, 440px) 1fr 2fr;
@@ -681,9 +689,9 @@ h2 span {
 
 .benefits-description {
   font-size: 22px;
-    max-width: 455px;
-    margin-left: 45px;
-    color: var(--color-grey);
+  max-width: 455px;
+  margin-left: 45px;
+  color: var(--color-grey);
 }
 
 .block-benefits img {
@@ -693,22 +701,22 @@ h2 span {
 .block-benefits-text {
   grid-area: block-benefits-text;
   display: flex;
-    align-items: center;
-    margin-left: 45px;
-    align-self: end;
+  align-items: center;
+  margin-left: 45px;
+  align-self: end;
 }
 
 .block-benefits-text .benefits-number {
   font-size: 88px;
-    margin-right: 40px;
-    color: var(--color-green);
+  margin-right: 40px;
+  color: var(--color-green);
 }
 
 .block-benefits-text h2 {
   font-size: 34px;
 }
 
-.block-benefits img{
+.block-benefits img {
   grid-area: image;
 }
 
@@ -716,18 +724,176 @@ h2 span {
   margin-inline: auto 4vw;
 }
 
-.first-block-benefits, .third-block-benefits {
+.first-block-benefits,
+.third-block-benefits {
   margin-left: 4vw;
 }
-
 
 .benefits-description {
   grid-area: benefits-description;
 }
 
+/* FOOTER */
+
+footer {
+  padding-bottom: 5vw;
+}
+
+.page-header-bottom {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 4vw;
+  flex-wrap: wrap;
+}
+
+.address {
+  display: flex;
+}
+
+.footer-address-info:first-child {
+  margin-right: 3vw;
+}
+
+.footer-title {
+  font-size: 22px;
+  line-height: 1.22;
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-bottom: 21px;
+}
+
+.footer-text {
+  font-size: 18px;
+  line-height: 1.16;
+  margin-bottom: 15px;
+  color: var(--color-grey);
+  height: 22px;
+  max-height: 36px;
+  position: relative;
+}
+
+.footer-text:last-child {
+  margin-bottom: 0;
+}
+
+.text-rights {
+  text-align: center;
+  margin-top: 5vw;
+  color: var(--color-green);
+  font-size: 16px;
+  line-height: 1.18;
+}
+
+.footer .banner-downoload-button button {
+  padding: 10px 15px 10px 50px;
+  font-size: 15px;
+}
+
+.footer .downoload-button-android::before {
+  top: 11px;
+  left: 25px;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.footer .downoload-button-ios::before {
+  top: 10px;
+  left: 22px;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+/* HOVER FOCUS */
+
+@media (hover:hover) {
+  .main-menu-link {
+    position: relative;
+  }
+
+  .main-menu-link:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-green);
+    transition: width 0.5s;
+  }
+
+  .main-menu-link:hover:after {
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px;
+    background-color: var(--color-green);
+    content: "";
+    transition: width 0.5s;
+  }
+
+  .page-header-button:hover {
+    background-color: var(--color-white);
+    outline: 2px inset var(--color-green);
+    outline-offset: -2px;
+    color: var(--color-green);
+    transition: 0ms;
+  }
+
+  .downoload-button:hover {
+    background-color: var(--color-green);
+  }
+
+  .form-button:hover {
+    color: var(--color-green);
+    background-color: var(--color-white);
+  }
+
+  .form-field-text:focus-visible {
+    outline: none;
+  }
+
+  .footer-text:hover {
+    color: var(--color-black);
+    border-bottom: 2px solid var(--color-green);
+  }
+
+  .footer-text:after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-green);
+    transition: width 0.5s;
+  }
+
+  .footer-text:hover:after {
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 2px;
+    background-color: var(--color-green);
+    content: "";
+    transition: width 0.5s;
+  }
+}
+
 @media (max-width: 1024px) {
 
   /* HEADER */
+
   .page-header-top {
     flex-wrap: wrap;
     row-gap: 10px;
@@ -800,11 +966,11 @@ h2 span {
 
   .functionality-inner {
     grid-template-areas:
-    "facilities-app-vision facilities-app-vision"
-    "facilities-first facilities-second"
-    "facilities-third facilities-fourth";
+      "facilities-app-vision facilities-app-vision"
+      "facilities-first facilities-second"
+      "facilities-third facilities-fourth";
     column-gap: 15vw;
-    grid-template-columns:none;
+    grid-template-columns: none;
     justify-content: center;
   }
 
@@ -812,6 +978,7 @@ h2 span {
     max-width: 290px;
     min-width: 188px;
   }
+
   .facilities h3 {
     line-height: 1.5;
     font-size: 18px;
@@ -825,9 +992,69 @@ h2 span {
     max-height: 420px;
   }
 
+  /* BENEFITS */
+
+  .block-benefits {
+    grid-template-rows: repeat(2, 140px);
+  }
+
   .block-benefits {
     margin-inline: 0;
   }
+
+  .block-benefits-text {
+    margin-left: 5vw;
+  }
+
+  .block-benefits-text .benefits-number {
+    font-size: 10vw;
+    margin-right: 4vw;
+  }
+
+  .block-benefits-text h2 {
+    font-size: 3vw;
+  }
+
+  .benefits-description {
+    font-size: 2vw;
+    margin-left: 5vw;
+  }
+
+  .block-benefits img {
+    padding-right: 20px;
+    min-height: 200px;
+    min-width: 233px;
+  }
+
+  .first-block-benefits img {
+    margin: 10px 0;
+  }
+
+  .second-block-benefits img {
+    min-width: 210px;
+    min-height: 180px;
+  }
+
+  /* FOOTER */
+
+  address {
+    margin-inline: 45px;
+  }
+
+  address .footer-title {
+    font-size: 3vw;
+  }
+
+  address .footer-text {
+    font-size: 2vw;
+  }
+
+  .banner-downoload-button {
+    margin-top: 3vw;
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
 }
 
 @media (max-width: 475px) {
@@ -968,15 +1195,16 @@ h2 span {
 
   .functionality-inner {
     grid-template-areas:
-    "facilities-app-vision"
-        "facilities-first"
-        "facilities-second"
-        "facilities-third"
-        "facilities-fourth";
+      "facilities-app-vision"
+      "facilities-first"
+      "facilities-second"
+      "facilities-third"
+      "facilities-fourth";
     column-gap: 0;
   }
 
-  .facilities h3, .facilities p {
+  .facilities h3,
+  .facilities p {
     text-align: center;
   }
 
@@ -984,5 +1212,99 @@ h2 span {
   .container .functionality-inner .facilities ::after {
     transform: translateX(-50%);
     left: 50%;
+  }
+
+  /* BENEFITS */
+
+  .container .block-benefits {
+    display: grid;
+    grid-template-areas:
+      "block-benefits-text"
+      "image"
+      "benefits-description";
+    grid-template-rows: none;
+    background: var(--color-white);
+    justify-content: center;
+    margin-bottom: 8vw;
+  }
+
+  .block-benefits .block-benefits-text {
+    margin-top: 15px;
+    margin-inline: auto;
+  }
+
+  .container .block-benefits .benefits-description {
+    font-size: 3vw;
+    text-align: center;
+    max-width: 283px;
+    margin: 0 13vw 33px;
+  }
+
+  .container .block-benefits img {
+    margin: 0 auto 3vw;
+    padding: 0 15vw 0;
+    min-height: auto;
+    min-width: auto;
+  }
+
+  /* FOOTER */
+
+  footer {
+    background-color: var(--color-cream-white);
+  }
+
+  .page-header-bottom {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .page-footer-logo {
+    order: -1;
+    flex-basis: 100%;
+    min-width: 131px;
+    margin-top: 2vw;
+    text-align: center;
+  }
+
+  address {
+    margin-inline: 0;
+    order: 1;
+    flex-basis: 100%;
+    max-width: 163px;
+  }
+
+  address .footer-address-info:first-child {
+    display: none;
+  }
+
+  .footer-address-info .footer-title {
+    font-size: 5vw;
+    text-align: center;
+  }
+
+  .footer-address-info .footer-text {
+    font-size: 3vw;
+    text-align: center;
+  }
+
+  .footer-number {
+    display: block;
+  }
+
+  .page-header-bottom .banner-downoload-button {
+    flex-basis: 100%;
+    order: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 7vw;
+    margin-top: 7vw;
+    max-width: 165px;
+  }
+
+  .text-rights {
+    font-size: 3vw;
+    color: var(--color-grey);
+    max-width: 200px;
+    margin: 7vw auto 0;
   }
 }
