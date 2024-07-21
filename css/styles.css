@@ -860,12 +860,12 @@ footer {
     outline: none;
   }
 
-  .footer-text:hover {
+  .footer-number:hover {
     color: var(--color-black);
     border-bottom: 2px solid var(--color-green);
   }
 
-  .footer-text:after {
+  .footer-number:after {
     content: "";
     display: block;
     position: absolute;
@@ -877,7 +877,7 @@ footer {
     transition: width 0.5s;
   }
 
-  .footer-text:hover:after {
+  .footer-number:hover:after {
     width: 100%;
     display: block;
     position: absolute;
