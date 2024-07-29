@@ -255,7 +255,10 @@ main {
 }
 
 /* HEADER */
-
+/*
+Нет необходимости называть класс .page-header,
+достаточно просто .header, не вижу смысла в приставке page
+*/
 .page-header-top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -311,6 +314,10 @@ main {
 }
 
 h1 {
+  /*
+  Зачем фонт сайз через vw?
+  В чем необходимость именно для этого проекта?
+  */
   font-size: 3vw;
   text-transform: uppercase;
   font-weight: 800;
@@ -411,6 +418,9 @@ h1 {
   max-width: 499px;
   min-width: 171px;
   border: none;
+  /*
+  Зачем длина инпута имеено в vw?
+  */
   width: 26vw;
   border-radius: 3px;
   padding: 15px 0 15px 35px;
