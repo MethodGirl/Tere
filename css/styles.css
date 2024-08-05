@@ -222,8 +222,8 @@ svg * {
   --color-grey: hsla(252, 3%, 63%, 1);
   --font-family-base: "Gilroy", sans-serif;
   --border: 1px solid var(--color-white);
-  --container-width: 1440px;
-  --container-padding-x: 15px;
+  --container-width: 1280px;
+  --container-padding-x: 80px;
   --transition-duration: 0.2s;
 }
 
@@ -248,10 +248,8 @@ svg * {
 }
 
 main {
-  background-color: var(--color-cream-white);
   max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
   margin-inline: auto;
-  padding-inline: var(--container-padding-x);
 }
 
 /* HEADER */
@@ -263,7 +261,7 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 85px 80px 38px;
+  padding: 85px 0 38px;
   align-items: center;
   justify-content: flex-end;
 }
@@ -303,14 +301,18 @@ main {
 
 /* BANNER */
 
+.main .container {
+  background-color: var(--color-cream-white);
+}
+
 .banner .container {
   display: flex;
-  justify-content: center;
+  justify-content: start;
 }
 
 .banner-body {
   max-width: 557px;
-  margin: 8.9vw 103px 0 80px;
+  margin: 8.9vw 103px 0 0;
 }
 
 h1 {
@@ -318,7 +320,7 @@ h1 {
   Зачем фонт сайз через vw?
   В чем необходимость именно для этого проекта?
   */
-  font-size: 3vw;
+  font-size: clamp(34px, 3vw, 60px);
   text-transform: uppercase;
   font-weight: 800;
   padding-bottom: 24px;
@@ -385,12 +387,16 @@ h1 {
 }
 
 .banner-img img {
-  margin: 54px 147px 0 0;
+  margin-top: 54px;
+}
+
+/* FORM-INNER */
+
+.form-inner .container {
+  padding-top: 3vw;  
 }
 
 .form {
-  margin-top: 3vw;
-  margin-inline: auto;
   max-width: 1280px;
   max-height: 250px;
   background-color: var(--color-green);
@@ -415,13 +421,8 @@ h1 {
 }
 
 .form-group input {
-  max-width: 499px;
-  min-width: 171px;
   border: none;
-  /*
-  Зачем длина инпута имеено в vw?
-  */
-  width: 26vw;
+  width: clamp(172px, 26vw, 499px);
   border-radius: 3px;
   padding: 15px 0 15px 35px;
 }
@@ -441,13 +442,13 @@ h1 {
   min-width: 165px;
 }
 
-/* FUNCTIONALITY */
+/* fyp */
 
-.functionality-description {
-  margin-top: 128px;
+.fyp-description {
+  padding-top: 128px;
 }
 
-.functionality-description h2 {
+.fyp-description h2 {
   text-align: center;
   font-size: 46px;
   font-weight: 800;
@@ -460,7 +461,7 @@ h2 span {
   color: var(--color-green);
 }
 
-.functionality-description p {
+.fyp-description p {
   text-align: center;
   font-size: 23px;
   color: var(--color-grey);
@@ -469,14 +470,15 @@ h2 span {
   margin-inline: auto;
 }
 
-.functionality-inner {
+.fyp-inner {
   display: grid;
   grid-template-areas:
     "facilities-first facilities-app-vision facilities-second"
     "facilities-third facilities-app-vision facilities-fourth";
   grid-auto-flow: column;
   grid-template-columns: minmax(270px, 290px) 1fr minmax(270px, 290px);
-  margin-bottom: 88px;
+  padding-bottom: 88px;
+  column-gap: 45px;
 }
 
 .facilities-first {
@@ -626,6 +628,11 @@ h2 span {
   margin-inline: auto;
 }
 
+.facilities-app-vision img {
+  min-width: 281px;
+}
+
+
 .facilities-app-vision::before {
   content: "";
   position: absolute;
@@ -685,6 +692,22 @@ h2 span {
   max-width: 1060px;
 }
 
+.container .second-block-benefits{
+  display: grid;
+  grid-template-areas: "image . block-benefits-text"
+    "image . benefits-description";
+  background: var(--color-white);
+  justify-content: space-between;
+  grid-template-columns: 2fr 1fr minmax(200px, 440px);
+  grid-template-rows: repeat(2, 155px);
+  margin-bottom: 55px;
+  max-width: 1060px;
+}
+
+.second-block-benefits img {
+  justify-self: end;
+}
+
 .block-benefits-text {
   grid-area: block-benefits-text;
 }
@@ -697,11 +720,17 @@ h2 span {
   grid-area: image;
 }
 
+
 .benefits-description {
   font-size: 22px;
   max-width: 455px;
   margin-left: 45px;
   color: var(--color-grey);
+}
+
+.second-block-benefits .benefits-description {
+  margin-left: 0;
+  margin-right: 45px;
 }
 
 .block-benefits img {
@@ -714,6 +743,11 @@ h2 span {
   align-items: center;
   margin-left: 45px;
   align-self: end;
+}
+
+.second-block-benefits .block-benefits-text {
+  margin-right: 45px;
+  margin-left: 0;
 }
 
 .block-benefits-text .benefits-number {
@@ -759,6 +793,7 @@ footer {
 
 .address {
   display: flex;
+  margin-inline: 1.5vw;
 }
 
 .footer-address-info:first-child {
@@ -798,6 +833,10 @@ footer {
 .footer .banner-downoload-button button {
   padding: 10px 15px 10px 50px;
   font-size: 15px;
+}
+
+.footer .banner-downoload-button {
+  margin-top: 20px;
 }
 
 .footer .downoload-button-android::before {
@@ -902,6 +941,11 @@ footer {
 
 @media (max-width: 1024px) {
 
+  .container {
+    margin-inline: auto;
+    padding-inline: 25px;
+  }
+
   /* HEADER */
 
   .page-header-top {
@@ -946,8 +990,12 @@ footer {
     margin-inline: 5px;
   }
 
+  .banner-img {
+    margin-inline: auto;
+  }
+
   .banner-img img {
-    margin: 29px auto;
+    margin-top: 29px;
     height: 450px;
   }
 
@@ -972,9 +1020,9 @@ footer {
     min-width: 130px;
   }
 
-  /* FUNCTIONALITY */
+  /* fyp */
 
-  .functionality-inner {
+  .fyp-inner {
     grid-template-areas:
       "facilities-app-vision facilities-app-vision"
       "facilities-first facilities-second"
@@ -1000,6 +1048,7 @@ footer {
 
   .facilities-app-vision img {
     max-height: 420px;
+    min-width: unset;
   }
 
   /* BENEFITS */
@@ -1065,6 +1114,42 @@ footer {
     justify-content: center;
   }
 
+}
+
+@media (max-width: 768px) {
+  /* BENEFITS */
+
+  .container .block-benefits {
+    display: grid;
+    grid-template-areas:
+      "block-benefits-text"
+      "image"
+      "benefits-description";
+    grid-template-rows: none;
+    grid-template-columns: none;
+    background: var(--color-white);
+    justify-content: center;
+    margin-bottom: 8vw;
+  }
+
+  .block-benefits .block-benefits-text {
+    margin-top: 15px;
+    margin-inline: auto;
+  }
+
+  .container .block-benefits .benefits-description {
+    font-size: 3vw;
+    text-align: center;
+    max-width: 283px;
+    margin: 0 auto 33px;
+  }
+
+  .container .block-benefits img {
+    margin: 0 auto 3vw;
+    padding: 0 15vw 0;
+    min-height: auto;
+    min-width: auto;
+  }
 }
 
 @media (max-width: 475px) {
@@ -1169,16 +1254,19 @@ footer {
     height: auto;
   }
 
-  form {
+  .container form {
     display: flex;
     flex-direction: column;
+    align-items: normal;
   }
 
   form .form-label {
     font-size: 6vw;
-    text-align: center;
-    margin: 22px auto 0 auto;
-    max-width: 280px;
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 18px;
+    text-align: left;
+    max-width: 290px;
   }
 
   form .form-group {
@@ -1187,23 +1275,21 @@ footer {
   }
 
   form .form-group input {
-    min-width: 172px;
-    margin-inline: auto;
+    margin-inline: 18px;
     margin-top: 15px;
-    width: 280px;
+    width: 100%;
     text-align: center;
   }
 
   form .form-group button {
-    width: 280px;
-    margin: 15px auto 30px;
-    min-width: 130px;
-    max-width: 280px;
+    margin: 15px 18px 30px 18px;
+    width: 100%;
+    max-width: 385px;
   }
 
-  /* FUNCTIONALITY */
+  /* fyp */
 
-  .functionality-inner {
+  .fyp-inner {
     grid-template-areas:
       "facilities-app-vision"
       "facilities-first"
@@ -1218,8 +1304,8 @@ footer {
     text-align: center;
   }
 
-  .container .functionality-inner .facilities ::before,
-  .container .functionality-inner .facilities ::after {
+  .container .fyp-inner .facilities ::before,
+  .container .fyp-inner .facilities ::after {
     transform: translateX(-50%);
     left: 50%;
   }
@@ -1248,6 +1334,18 @@ footer {
     text-align: center;
     max-width: 283px;
     margin: 0 13vw 33px;
+  }
+
+  .container .block-benefits .benefits-title {
+    font-size: clamp(18px, 9vw, 24px);
+    line-height: 0.95;
+    margin-right: 24px;
+  }
+
+  .container .block-benefits .benefits-number {
+    font-size: clamp(58px, 9vw, 64px);
+    line-height: 1.35;
+    margin-left: 24px;
   }
 
   .container .block-benefits img {
