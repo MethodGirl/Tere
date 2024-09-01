@@ -253,10 +253,7 @@ main {
 }
 
 /* HEADER */
-/*
-Нет необходимости называть класс .page-header,
-достаточно просто .header, не вижу смысла в приставке page
-*/
+
 .page-header-top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -266,7 +263,7 @@ main {
   justify-content: flex-end;
 }
 
-.page-header-top a {
+.page-header-logo {
   margin-right: auto;
 }
 
@@ -276,13 +273,15 @@ main {
 
 .main-menu-list {
   display: flex;
+  column-gap: 45px;
   font-size: 17px;
   line-height: 1.23;
   align-items: center;
+  margin-right: clamp(24px, 2vw, 47px);
 }
 
-.main-menu-list li {
-  margin-right: 46px;
+.main-menu-list a {
+  min-width: 120px;
 }
 
 .page-header-top .page-header-button {
@@ -316,10 +315,6 @@ main {
 }
 
 h1 {
-  /*
-  Зачем фонт сайз через vw?
-  В чем необходимость именно для этого проекта?
-  */
   font-size: clamp(34px, 3vw, 60px);
   text-transform: uppercase;
   font-weight: 800;
@@ -1047,7 +1042,7 @@ footer {
   }
 
   .facilities-app-vision img {
-    max-height: 420px;
+    max-height: 390px;
     min-width: unset;
   }
 
